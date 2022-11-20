@@ -1,0 +1,146 @@
+<!-- 
+    "!" or "Bang" isa way for us to quickly create a boilerplate
+    for our HTML document. 
+    CTRL+ENTER -> Jump to next line w/o messing w/ text further down the line.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+    - DOCTYPE: declares what our documentis - an HTML document.
+    - lang: notes what the language is. Assists search enginers and browsers.
+    - The head tag holds all of our meta data.
+        -holds various information such as the title of the doc, 
+        viewport settings, links to other files - like our CSS.
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to HTML</title>
+    <!-- 
+        - charset: defines which characters are available: 0-9, A-Z symbols.
+            -UTF-8 covers almost all of the characters.
+        - http-equiv: Allows us to render older browser versions, if necessary.
+        - name & content: Details on the users viewport, or screen. Auto-scales as necessary.
+        - title: details the title of our document. Displayed on the tab in the browser.
+    -->
+</head>
+<body>
+    <!-- 
+        Comments:
+        - ALT+Shift+A -> Quick key to create a comment field.
+        - CTRL+/ -> Quick key to create a comment line.
+    -->
+
+    <!-- 
+        Body
+            - What the client will display when rendering.
+    -->
+
+    <!--
+        HTTP Methods (used as data transfer protocalls)
+            - GET
+            - POST
+            - PATCH (update)
+            - PUT (update)
+            - DELETE
+
+            3 major languages
+                - HTML
+                - CSS
+                - JavaScript
+    -->
+
+    <!-- 
+        - Structural tag
+        - Style tag
+        - ___ tag
+    -->
+
+    <h1>Example of a Structural Element</h1>
+    <div>
+        <div>
+            - h1: heading. These range from h1-h6, getting smaller as the number increases.
+            - div: A division.
+            - p: paragraph elements
+            - img: provides us an element to present an image. (self closing)
+            - span: we can write a block of text without line breaks.
+            -ADDED THIS LINE.
+        </div>
+        <h2>Sample h2</h2>
+        <h3>Sample h3</h3>
+        <h4>Sample h4</h4>
+        <h5>Sample h5</h5>
+        <h6>Sample h6</h6>
+        <p>Here is a paragraph element</p>
+        <!-- Using emmet we can inject "lorem" and hit to to populate a block of text -->
+        <span>Lorem ipsum dolor sit amet.
+        Facilis vitae accusantium incidunt totam!
+        Quos eius est earum aperiam.
+        Est voluptas necessitatibus reiciendis unde.
+        Nobis qui non deleniti ea?
+        </span>
+        
+        <img src="https://assets.website-files.com/5f4577933a0688792f77983b/5ffcaf5bf69d7dbee581b8e3_01_11-21_UPRIGHT_LOGO_800.png
+        " alt="Upright Logo">
+        <img src="./assets/logo image.png" alt="Upright Logo">
+        <!-- 
+            img tag has two default attributes
+            *self closing element/tag
+                - src
+                    - required
+                    - source of the image. This could be in an assets folder or another location on the web.
+                - alt
+                    -optional ~ but highly recommended
+                    -text that is used in case image doesn't load
+                    - text that is read by screen readers for the visually impaired.
+                    - can be a source for SEO (Search Engine Optimation)
+                    - title
+                        - can help with tool-tips
+        -->
+    </div>
+
+    <!-- 
+        emmet example div>ul>li*6
+        
+        ul: unordered list
+        ol: ordered list
+        li: list item
+    -->
+    <div>
+        <ul>
+            <li><strong>Bolds our Text</strong>but so does <b>this</b></li>
+            <li><em>provides emphasis</em> or <i>italitcs</i></li>
+            <li><br>Will do a line break for us. <i>Notice no closing tags?</i></li>
+            <li><hr>Gives us a horizontal line or <b>dividing line</b></li>
+            <li><blockquote>"Quote"</blockquote></li>
+            <li><pre>A way to showcase code...</pre></li>
+        </ul>
+    </div>
+
+        <div>
+            <!-- 
+                input: typically used within forms but not limited.
+                    - Many different types such as numbers, radial, email, passwords, etc.
+                link: won't show up in browser, but a way for us to connect outside files (like our CSS)
+            -->
+            <input type="text">
+            <input type="number">
+            <link rel="stylesheet" href="./style.css">
+        </div>
+        
+        <!-- Web Page Structure -->
+        <img src="./assets/sample layout.jpg" alt="Sample Layout">
+        <div>
+            <header>header</header>
+            <nav>nav</nav>
+            <aside>aside</aside>
+            <section>
+                <article>article 1</article>
+                <article>article 2</article>
+            </section>
+            <footer>footer</footer>
+        </div>
+</body>
+</html>

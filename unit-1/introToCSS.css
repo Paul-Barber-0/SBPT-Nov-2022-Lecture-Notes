@@ -1,0 +1,92 @@
+/* 
+    Building Blocks
+
+    selector {
+        [Declaration Block]
+        property: value;
+    }
+*/
+
+/*  Order of "Final Response" Hierarchy
+    - !important
+    - Inline CSS
+    - ID Selectors
+    - Class Selectors
+    - Element
+*/
+:root {
+    --companyPurple: #9f16c5;
+}
+
+nav {
+    /* Targeting the element */
+    /* background-color: var(--companyPurple); */
+    background-color: #d2d2d2;
+    /* 
+        - preset colors: red, blue, yellow, etc.
+        - rgb & rgba (red, green, blue, alpha)
+        - ex rgba(200, 15, 100, .5)
+        - Hexidecimal
+            - 16 digits: 0-9, A-F
+            - ex: #d2d2d2
+    */
+    overflow: hidden;
+}
+
+/* Targeting a Class */
+
+.btn {
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    /* padding: Top Right Bottom Center [Clockwise] */
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* IDs */
+#home {
+    float: left;
+    color: red !important;
+}
+
+/* Compound Operators:
+    > Refers to direct children of an element.
+    , Matching selector.
+    + Immediate sibling of an element.
+    ~ Subsequent sibling of an element.
+ */
+
+nav .btn {
+    /* Points to the Nav and ANY class within it, or children of, named "btn" */
+    text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+div .paragraph > p {
+    /* Targeting any div with a class "paragraph" that is holding a <p> element */
+    color: red;
+}
+
+.paragraph + div {
+    color: rgb(6, 128, 0);
+}
+
+a:hover {
+    color: lightblue;
+    /* 
+    Mousing over any anchor tag will alter its color
+        - "home" doesn't change due to !important
+    */
+}
+
+a:active {
+    color: purple;
+    text-shadow: 2px 2px 2px rgb(255, 255, 255);
+    /* COPY A BLOCK OF CODE IN VSCODE 
+        ALT+SHIFT+DownArrow/UpArrow
+
+        MOVE A BLOCK OF CODE
+        AL+Down/Up Arrow
+    */
+}
