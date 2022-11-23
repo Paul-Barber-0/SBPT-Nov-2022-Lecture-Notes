@@ -1,0 +1,35 @@
+html, body {
+    margin: 0;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    background-color: lightblue;
+    width: 100vw;
+    height: 3em;    
+}
+
+li {
+    /* display: none; */
+    list-style: none;
+    display: inline;
+    margin: 0 2em;
+    float: left;
+}
+
+#about {
+    padding: 5em 2em 0 2em;
+    height: 100vh;
+    background-color: lightgoldenrodyellow;
+}
+
+#shop {
+    height: 100vh;
+    width: 100vw;
+    background-color: aqua;
+}
+
+#brand { /* Targeting the id of the first element */
+    float: right;
+}
