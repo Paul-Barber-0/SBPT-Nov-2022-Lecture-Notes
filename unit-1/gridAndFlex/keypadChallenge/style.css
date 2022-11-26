@@ -1,0 +1,12 @@
+#keypad {
+    display: grid;
+    grid-template: repeat(4, 25%) / repeat(3, 33%);
+    margin: 30% 45%;
+}
+
+.key {
+    border: 1px solid black;
+    text-align: center;
+    grid-column: span 1;
+    grid-row: span 1;
+}
