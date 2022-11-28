@@ -1,0 +1,18 @@
+body > * {
+    border: solid black 1px;
+    margin: 10px 40px;
+    padding: 5px;
+    text-align: center;
+}
+
+nav a {
+    padding: 8%;
+}
+
+
+
+.imageGallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
