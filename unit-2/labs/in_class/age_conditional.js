@@ -23,3 +23,7 @@ if(age <= 17) {
         console.log('You can rent a car!');
     }
 }
+
+/* 
+    Write a ternary that does the same thing as the age challenge
+*/
