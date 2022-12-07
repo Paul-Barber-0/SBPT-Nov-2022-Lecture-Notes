@@ -10,9 +10,7 @@
     - Any number that is not divisible by either, print the number.
 */
 
-let num = 1;
-
-while(num <= 30) {
+for(let num = 1; num <= 30; num++) {
     (num % 3 === 0 && num % 5 == 0) ?
     msg = "Fizz Buzz" :
     (num % 3 === 0) ?
@@ -22,5 +20,4 @@ while(num <= 30) {
     msg = num;
 
     console.log(msg);
-    num++
 }
