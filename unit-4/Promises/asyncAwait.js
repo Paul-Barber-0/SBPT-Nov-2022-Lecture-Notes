@@ -1,7 +1,7 @@
 /* 
 ! Async/Await
 
-        - Introduced in ES8 in 2017
+        - Introduced in ES6 in 2017
         - Can make any function an async function simply by denoting as such.
 
     Keywords:

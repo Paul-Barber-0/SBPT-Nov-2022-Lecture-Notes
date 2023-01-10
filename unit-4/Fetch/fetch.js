@@ -36,7 +36,7 @@
     - Before fetch(), we would have to use an httpRequest through the above noted.
     - Is an API
     - A method requires 1 arguement.
-        - location of fata (url)
+        - location of data (url)
     - Handles the request and response
     - Returns a promise
         - Allows us to use resolvers
@@ -142,7 +142,7 @@ fetch('./local.json')
 
     getCatFact3();
 
-    //* using respolvers
+    //* using resolvers
     fetch(url)
         .then(r => r.json())
         .then(d => log('Resolver: ', d.data[0]))
