@@ -4,6 +4,7 @@
 - Install our dependencies
     - express: `npm i express`
 - Create a `.gitignore` file
+    - `/node_modules` within .gitignore
     - tells our local resository to ignore the `node_modules` folder when backing up
     - node_modules folder
         - Provides us access to any "behind the scenes" code that helps run express and any other depenedency.
