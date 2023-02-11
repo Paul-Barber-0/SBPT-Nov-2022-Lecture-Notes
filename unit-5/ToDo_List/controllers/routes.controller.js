@@ -61,7 +61,7 @@ router.get('/', (req, res) => {
     }
 });
 
-//TODO POST a take
+//TODO POST a task
 
 router.post('/', (req, res) => {
     try {
@@ -100,7 +100,51 @@ router.post('/', (req, res) => {
 });
 
 // TODO: Updated (PUT)
+router.put('/:id', (req, res) => {
 
+    // console.log(req.params.id);
+    try {
+        
+        let request = Number(req.params.id);
+        // console.log(typeof request);
+
+        let todo = req.body;
+        // console.log(todo);
+
+        fs.readFile('./helpers/db.json', (err, data) => {
+            if(err) throw err;
+
+            // console.log(data.toString());
+            const database = JSON.parse(data);
+            // console.log(database instanceof Array);
+
+            let result;
+
+            database.forEach((obj, i) => {
+                // console.log(obj.id, i);
+
+                if(obj.id === request) {
+                    database[i] = todo;
+                    result = todo;
+                }
+
+            });
+            fs.writeFile('./helpers/db.json', JSON.stringify(database), err => console.log(err));
+            
+            result ? 
+                res.status(200).json({
+                    object: result
+                }) :
+                res.status(404).json({ status: `ID: ${request} not found`});
+        })
+
+    } catch (err) {
+        res.status(500).json({
+            status: `Error: ${err.message}`
+        })
+    }
+
+})
 /* 
     - pass ID value as a param
     - iterate through options
@@ -121,5 +165,44 @@ router.post('/', (req, res) => {
 
     *HINT: You may get stuck with your params not matching what's inside your id. Check your data type.
 */
+router.delete('/:id', (req, res) => {
 
+    try {
+        
+        const request = Number(req.params.id);
+
+        fs.readFile('./helpers/db.json', (err, data) => {
+            if(err) throw err;
+
+            const db = JSON.parse(data);
+            let result = [];
+            let foundRequest = false;
+            // console.log('Before ForEach: ', db);
+            db.forEach((obj, i) => {
+                if(obj.id !== request) {
+                    result.push(db[i]);
+                } else foundRequest = true;
+            });
+            // console.log('After: ', db);
+            // console.log(result);
+
+            fs.writeFile('./helpers/db.json', JSON.stringify(result), err => console.log(err));
+
+            foundRequest ? 
+                res.status(200).json({
+                    object: result
+                }) :
+                res.status(404).json({
+                    message: `ID: ${request} not found.`
+                })
+        })
+
+    } catch (err) {
+        res.status(500).json({
+            error: err.message
+        })
+    }
+    
+
+});
 module.exports = router;
