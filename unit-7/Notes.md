@@ -106,3 +106,100 @@ const [ count, setCount ] = useState(0); // raw value
 const [ count, setCount ] = useState(() => 0); // CB Function
 ```
 - Callback functions renders initial value once.
+
+# useRef()
+- is a hook
+- values consist and don't cause re-renders of the page.
+- return only one item
+  - an object called "current"
+- must be imported in with `react`
+```jsx
+import { useRef } from 'react';
+```
+
+
+# React-Router-DOM
+`npm i react-router-dom`
+- Client-side routing
+- Installs
+**index.js**
+```js
+import { BrowserRouter } from 'react-router-dom';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>  // <-- ADDED
+      <App />
+    </BrowserRouter> // <-- ADDED
+  </React.StrictMode>
+);
+```
+**App.jsx**
+- Refactor
+
+```jsx
+return (
+    <div className="App">
+      <Routes>
+          <Route
+            path='/'
+            element={<Auth updateToken={updateToken} />}
+          />
+          <Route 
+            path='/movie'
+            element={<h2>Movie Section Placeholder</h2>}
+          />
+      </Routes>
+    </div>
+  );
+```
+- path: decalares which route to view
+- element: which component to display when a path is viewed.
+
+**example:**
+```jsx
+path="/endpoint"
+element={<Component/JSX />}
+```
+
+# useEffect()
+- Allow us to perform side effects in a function component.
+- Accepts two arguments
+  - function
+  - dependency
+    - optional
+    - Can denote a specific event to trigger.
+
+```js
+useEffect(() => {
+  // Run on every render
+})
+
+useEffect(() => {
+  // Run only on the first render
+}, []);
+
+const [ state, setState ] = useState();
+
+useEffect(() => {
+  // Run on the first render
+  // Runs any time any dependecy changes
+}, [state])
+```
+
+# useParams()
+- Comes from React-Router-DOM
+  - Considers the `path` provided within the `<Route>` in `App.jsx`
+  - Recognizes the `:id` as a parameter value in which to respond.
+  - We are able to access the key of `id` much in the same way we did with the server.
+
+# useNavigate()
+- Comes from React-Router-DOM
+  - Simply helps us move from one endpoint to another as we desire.
+  - Must pass in the path as a argument.
+
+ex:
+```jsx
+navigate('/sample-endpoint');
+```
